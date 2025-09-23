@@ -57,3 +57,9 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Part-1 : 
+
+Branch Name: part-1/components
+Description:
+"This branch focuses on creating and managing reusable Angular components. The goal is to set up a scalable component architecture, implement standalone components, and enable easy integration of new UI elements into the application. It covers the creation, import, and usage of components in templates, ensuring clean code structure, proper data binding, and maintainability for future development."
