@@ -1,90 +1,21 @@
 <app-navbar></app-navbar>
-<p> This will be the main part of the single web page. It will be associated to user's navigation.</p>
+<main role="main">
 
-<h3> How to integrate and use standalone conponents : </h3>
-<h3> ..... show more</h3>
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Hello, world!</h1>
+      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    </div>
+  </div>
 
-<p> 
-  <!--
+  <div class="container">
+    <router-outlet></router-outlet>
+    <hr>
 
-  Got it 👍 You’re on Angular 20 (so it’s using standalone components by default, no NgModule).
+  </div> <!-- /container -->
 
-When you create a new component with:
+</main>
 
-ng generate component my-feature
-
-
-Angular will generate something like:
-
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-my-feature',
-  standalone: true,
-  templateUrl: './my-feature.component.html',
-  styleUrls: ['./my-feature.component.css']
-})
-export class MyFeatureComponent {}
-
-✅ Using it inside your main component (app.component.ts)
-
-Import the new component
-
-import { Component } from '@angular/core';
-import { MyFeatureComponent } from './my-feature/my-feature.component';
-
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [MyFeatureComponent],  // 👈 register it here
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = 'my-angular-app';
-}
-
-
-Use it in the template (app.component.html)
-
-<h1>{{ title }}</h1>
-<app-my-feature></app-my-feature>
-
-✅ If you create multiple components
-
-Just keep importing them into the parent component:
-
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [MyFeatureComponent, AnotherComponent, YetAnotherComponent],
-  templateUrl: './app.component.html',
-})
-
-✅ If you want them available across many components
-
-Instead of importing them everywhere, create a Shared imports file:
-
-src/app/shared/imports.ts
-
-import { MyFeatureComponent } from '../my-feature/my-feature.component';
-import { AnotherComponent } from '../another/another.component';
-
-export const SHARED_IMPORTS = [
-  MyFeatureComponent,
-  AnotherComponent
-];
-
-
-Then in your component:
-
-@Component({
-  standalone: true,
-  imports: [SHARED_IMPORTS],
-  ...
-})
-
--->
-
-</p>
 <app-footer></app-footer>
