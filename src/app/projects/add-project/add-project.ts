@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Product } from '../../models/product';
+import { ProductService } from '../../services/productService';
+import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-add-project',
   imports: [FormsModule],
@@ -11,19 +13,20 @@ export class AddProject {
 
   p:Product = new Product();
 
-  result="";
-
-  name="";
+  constructor(private productService:ProductService, private route:Router){}
 
   ngOnInit() {
-    this.result="mes étudiants de 2 AWI.";
-    this.name= "mes étudiants de 2 AWI.";
     this.p = new Product();
    }
 
-direBonjour(r:string): void {
-  this.result = r;
-//alert('Bonjour '+this.result);
-}
+   saveProduct():void{
+    this.productService.addProduct(this.p).subscribe({
+      next : data => {
+        console.log('Product added');
+        this.route.navigate(['/products'])
+      },
+      error : err => console.log('Error save product',err)
+    });
+   }
 
 }

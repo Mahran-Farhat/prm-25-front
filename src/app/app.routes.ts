@@ -6,7 +6,7 @@ import { App } from './app';
 
 export const routes: Routes = [
     {path:"",component:ListProjects},
-    {path:"projects",component:ListProjects},
+    {path:"products",component:ListProjects},
     {path:"add-project",component:AddProject},
     {path:"search-projects",component:Search}
 ];

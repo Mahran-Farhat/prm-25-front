@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { Product } from '../../models/product';
 import {ProductService} from '../../services/productService';
-import { error } from 'console';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-list-projects',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './list-projects.html',
   styleUrl: './list-projects.css'
 })
