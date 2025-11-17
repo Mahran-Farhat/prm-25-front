@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Product } from '../../models/product';
 import {ProductService} from '../../services/productService';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-projects',
@@ -13,7 +14,7 @@ export class ListProjects {
 
   products:Product[]=[];
 
-  constructor(private productService:ProductService){}
+  constructor(private productService:ProductService, private route:Router){}
 
   ngOnInit(){
     this.loadProducts();
@@ -29,5 +30,19 @@ export class ListProjects {
       }
     );
   }
+
+  deleteProduct(id:number):void{
+   this.productService.deleteProduct(id).subscribe(
+    {next : data => this.route.navigate(['/products'])
+    ,
+    error: err => console.log('Error delete product with id :'+id)
+    }
+   );
+  }
+
+  updateProduct(id:number):void{
+    this.route.navigate(['/update-project',id]);
+  }
+
 
 }

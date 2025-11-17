@@ -7,6 +7,7 @@
       <th scope="col">Price</th>
       <th scope="col">Quatity</th>
       <th scope="col">Desciption</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +18,12 @@
       <td>{{product.price}}</td>
       <td>{{product.quantity}}</td>
       <td>{{product.description}}</td>
+      <td>
+        <button (click)="deleteProduct(product.id!)"  class="btn btn-danger" >Delete</button>
+ </td>
+ <td>
+        <button (click)="updateProduct(product.id!)" class="btn btn-success">Show</button>
+      </td>
     </tr>
   </tbody>
 </table>

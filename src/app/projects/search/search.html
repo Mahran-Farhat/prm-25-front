@@ -1,1 +1,48 @@
-<p>search works!</p>
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" [(ngModel)]=text [ngModelOptions]="{standalone: true}" aria-describedby="project name">
+  </div>
+    <div class="form-group">
+    <label for="category">Category</label>
+    <select name="cars" [(ngModel)]=category [ngModelOptions]="{standalone: true}" class="form-control" id="category">
+  <option value="----">----</option>
+   <option value="ELECTRONICS">ELECTRONICS</option>
+  <option value="FASHION">FASHION</option>
+  <option value="HOME_APPLIANCES">HOME_APPLIANCES</option>
+  <option value="BOOKS">BOOKS</option>
+</select>
+  </div>
+
+    <button  class="btn btn-primary" type="submit">Submit</button>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Category</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quatity</th>
+      <th scope="col">Desciption</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <th scope="row">{{product.id}}</th>
+      <td>{{product.category}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.quantity}}</td>
+      <td>{{product.description}}</td>
+      <td>
+        <button (click)="delete(product.id!)"  class="btn btn-danger" >Delete</button>
+ </td>
+ <td>
+        <button (click)="update(product.id!)" class="btn btn-success">Show</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

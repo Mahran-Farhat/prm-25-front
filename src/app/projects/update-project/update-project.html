@@ -1,0 +1,31 @@
+<form (ngSubmit)="saveProduct()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" [(ngModel)]=p.name [ngModelOptions]="{standalone: true}" aria-describedby="project name">
+  </div>
+    <div class="form-group">
+    <label for="price">Price</label>
+    <input type="number" [(ngModel)]=p.price [ngModelOptions]="{standalone: true}" class="form-control" id="price">
+  </div>
+    <div class="form-group">
+    <label for="category">Category</label>
+    <select name="cars" [(ngModel)]=p.category [ngModelOptions]="{standalone: true}" class="form-control" id="category">
+  <option value="ELECTRONICS">ELECTRONICS</option>
+  <option value="FASHION">FASHION</option>
+  <option value="HOME_APPLIANCES">HOME_APPLIANCES</option>
+  <option value="BOOKS">BOOKS</option>
+</select>
+  </div>
+    <div class="form-group">
+    <label for="quantity">Quantity</label>
+    <input type="number" [(ngModel)]=p.quantity [ngModelOptions]="{standalone: true}" class="form-control" id="quantity">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea [(ngModel)]=p.description [ngModelOptions]="{standalone: true}" class="form-control" id="description">
+        </textarea>
+  </div>
+
+    <button  class="btn btn-primary" type="submit">Submit</button>
+
+</form>
